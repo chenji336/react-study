@@ -1,16 +1,23 @@
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
 // var Redux = require('redux')
 // var createStore = Redux.createStore
 
 // counter就是reducer，根据不同的dispatch产生新的state的一个程序
-function counter(state = 0, action) {
+// 可以跟之前对比，现在counter相当于是combineReducers的角色了
+function counter(state = {}, action) {
+  return {
+    testNest: testNest(state.testNest, action)
+  };
+}
+
+function testNest(val = 0, action) {
   switch (action.type) {
-  case 'INCREMENT':
-    return state + 1;
-  case 'DECREMENT':
-    return state - 1;
-  default:
-    return state;
+    case 'INCREMENT':
+      return val + 1;
+    case 'DECREMENT':
+      return val - 1;
+    default:
+      return val;
   }
 }
 
@@ -19,8 +26,10 @@ function counter(state = 0, action) {
 let store = createStore(counter);
 
 // 可以手动订阅更新，也可以事件绑定到视图层。
-store.subscribe(() =>
-  console.log(store.getState())
+store.subscribe(() => {
+  console.log(store.getState());
+}
+
 );
 
 // 改变内部 state 惟一方法是 dispatch 一个 action。
