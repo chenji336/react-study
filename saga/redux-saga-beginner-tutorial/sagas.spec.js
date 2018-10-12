@@ -4,7 +4,7 @@ import { delay } from 'redux-saga';
 
 import { incrementAsync } from './sagas';
 
-test('incrementAsync Saga test', (t) => {
+test('incrementAsync Saga test', (t) => { // t改成assert更好理解`断言`
     const generator = incrementAsync();
     t.deepEqual(
         generator.next().value,
