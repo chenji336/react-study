@@ -6,7 +6,10 @@ export default function counter(state = 0, action) {
       return (state % 2 !== 0) ? state + 1 : state
     case 'DECREMENT':
       return state - 1
-    default:
+    // case 'INCREMENT_ASYNC':
+    // 就算有INCREMENT_ASYNC，执行完之后还是回去执行sagas里面的INCREMENT_ASYNC
+    //   return state + 200
+    default: 
       return state
   }
 }
