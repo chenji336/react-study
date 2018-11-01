@@ -37,6 +37,6 @@ store.subscribe(() => {
 store.dispatch({ type: 'INCREMENT' });
 // 1
 store.dispatch({ type: 'INCREMENT' });
-// 2
+// 2 在上面的基础上+1，所以理解就是store会把之前的state保存，然后当成下一个state传递过去
 store.dispatch({ type: 'DECREMENT' });
 // 1

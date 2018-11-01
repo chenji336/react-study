@@ -40,3 +40,5 @@ const rootReducer = combineReducersSelf({
 const store = createStore(rootReducer);
 console.log(store.getState());
 // {theDefaultReducer : 0, firstNamedReducer : 1, secondNamedReducer : 2}
+
+// ？？这个时候如何dispatch？对比index.js看，其实dispatch传任何值都不会影响上面的输出
