@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 import { ThemeContext, themes } from './context/theme-context';
 import ThemeTogglerButton from './context/theme-toggler-button';
+import CreateRef from './refs/createRef';
+import CbRef from './refs/cbRef';
+import ForwarRefCommon from './refs/forwardRef-common';
+import ForwardRefHigh from './refs/forwardRef-high';
 
 class App extends Component {
 
@@ -22,7 +26,11 @@ class App extends Component {
   render() {
     return (
       <ThemeContext.Provider value={this.state}>
-        <Content />
+        {/* <Content /> */}
+        {/* <CreateRef></CreateRef> */}
+        {/* <CbRef></CbRef> */}
+        {/* <ForwarRefCommon></ForwarRefCommon> */}
+        <ForwardRefHigh></ForwardRefHigh>
       </ThemeContext.Provider>
     );
   }
