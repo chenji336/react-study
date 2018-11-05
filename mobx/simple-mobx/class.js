@@ -29,7 +29,9 @@ class Store {
 const newStore = new Store();
 newStore.add();
 newStore.load();
-// console.log(getData())
+
+
+// private
 function getData() {
    return new Promise(resolve => {
        setTimeout(() => {
