@@ -6,6 +6,9 @@ import CreateRef from './refs/createRef';
 import CbRef from './refs/cbRef';
 import ForwarRefCommon from './refs/forwardRef-common';
 import ForwardRefHigh from './refs/forwardRef-high';
+import Portals from './portals/index';
+import HocSimpleComponent from './hoc/simple';
+import PropsRender from './props-render';
 
 class App extends Component {
 
@@ -30,7 +33,10 @@ class App extends Component {
         {/* <CreateRef></CreateRef> */}
         {/* <CbRef></CbRef> */}
         {/* <ForwarRefCommon></ForwarRefCommon> */}
-        <ForwardRefHigh></ForwardRefHigh>
+        {/* <ForwardRefHigh></ForwardRefHigh> */}
+        {/* <Portals></Portals> */}
+        {/* <HocSimpleComponent></HocSimpleComponent> */}
+        <PropsRender></PropsRender>
       </ThemeContext.Provider>
     );
   }
