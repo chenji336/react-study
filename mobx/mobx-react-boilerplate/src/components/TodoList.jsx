@@ -23,7 +23,7 @@ class TodoList extends React.Component {
         <hr />
         <ul>
           {this.props.store.todos.map(todo => (
-            <Todo todo={todo} key={todo.id} />
+            <Todo todo={todo} key={todo.id} /> // store的内容需要通过observer(xx=>xxxx)才能进行接受
           ))}
         </ul>
         Tasks left: {this.props.store.unfinishedTodoCount}

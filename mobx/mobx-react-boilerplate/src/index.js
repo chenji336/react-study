@@ -5,13 +5,16 @@ import DevTools from "mobx-react-devtools";
 import TodoList from "./components/TodoList";
 import TodoListModel from "./models/TodoListModel";
 import TodoModel from "./models/TodoModel";
-
+import SimpleMbox from './components/SimpleMbox';
+import CrossMbox from './components/CrossMbox';
 const store = new TodoListModel();
 
 render(
   <div>
-    <DevTools />
-    <TodoList store={store} />
+    {/* <DevTools />
+    <TodoList store={store} /> */}
+    {/* <SimpleMbox></SimpleMbox> */}
+    <CrossMbox></CrossMbox>
   </div>,
   document.getElementById("root")
 );
