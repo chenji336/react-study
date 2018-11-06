@@ -1,7 +1,7 @@
 import { observable, autorun, computed } from 'mobx';
 
 // mobx5.x版本如果传入的是简单变量（number、string），则会报错，监听不了
-var value = observable(1); 
+// var value = observable(1); 
 
 var numbers = observable([1,2,3]);
 

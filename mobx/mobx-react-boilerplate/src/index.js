@@ -1,20 +1,22 @@
 import React from "react";
 import { render } from "react-dom";
-import DevTools from "mobx-react-devtools";
+import DevTools, { setLogEnabled } from "mobx-react-devtools";
 
 import TodoList from "./components/TodoList";
 import TodoListModel from "./models/TodoListModel";
-import TodoModel from "./models/TodoModel";
-import SimpleMbox from './components/SimpleMbox';
-import CrossMbox from './components/CrossMbox';
+// import TodoModel from "./models/TodoModel";
+// import SimpleMbox from './components/SimpleMbox';
+// import CrossMbox from './components/CrossMbox';
+// import ProviderMobx from './components/ProviderMbox';
 const store = new TodoListModel();
-
+setLogEnabled(true); // 开启日志
 render(
   <div>
-    {/* <DevTools />
-    <TodoList store={store} /> */}
+    <DevTools />
+    <TodoList store={store} />
     {/* <SimpleMbox></SimpleMbox> */}
-    <CrossMbox></CrossMbox>
+    {/* <CrossMbox></CrossMbox> */}
+    {/* <ProviderMbox></ProviderMbox> */}
   </div>,
   document.getElementById("root")
 );
