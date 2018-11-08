@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { observer } from "mobx-react";
+import { action } from 'mobx'
 
 const Todo = observer(({ todo }) => (
   <li>
     <input
       type="checkbox"
-      checked={todo.finished}
-      onClick={() => (todo.finished = !todo.finished)}
+      defaultChecked={(todo.finished)} 
+      onClick={action(() => (todo.finished = !todo.finished))} // 严格模式需要action
     />
     {todo.title}
   </li>
