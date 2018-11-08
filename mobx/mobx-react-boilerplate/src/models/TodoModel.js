@@ -5,7 +5,8 @@ export default class TodoModel {
   @observable title;
   @observable finished = false;
 
-  constructor(title) {
+  constructor(title, finished) {
     this.title = title;
+    this.finished = finished;
   }
 }

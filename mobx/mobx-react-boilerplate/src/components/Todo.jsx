@@ -6,8 +6,8 @@ const Todo = observer(({ todo }) => (
   <li>
     <input
       type="checkbox"
-      defaultChecked={(todo.finished)} 
-      onClick={action(() => (todo.finished = !todo.finished))} // 严格模式需要action
+      checked={(todo.finished)} 
+      onChange={action(() => (todo.finished = !todo.finished))} // 严格模式需要action
     />
     {todo.title}
   </li>

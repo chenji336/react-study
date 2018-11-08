@@ -15,13 +15,13 @@ const store = new TodoListModel();
 
 store.addTodo("Get Coffee");
 store.addTodo("Write simpler code");
-// .finished=true放在render后面不会被渲染，以后发现原因在进行补充
-runInAction(() => store.todos[0].finished = true); // 严格模式 actoin(fn)()
+// .finished=true放在render后面不会被渲染，以后发现原因在进行补充(因为checkbox的check写成了defaultCheck)
+// runInAction(() => store.todos[0].finished = true); // 严格模式 actoin(fn)()
 // store.todos[0].finished = true // 非严格模式
 
 // TodoList如果没有@observer，后续接受不到下面这条添加的
 setTimeout(() => {
-  store.addTodo("Get a cookie as well");
+  store.addTodo("Get a cookie as well", true);
 }, 2000);
 
 render(
@@ -34,7 +34,7 @@ render(
   </div>,
   document.getElementById("root")
 );
-// runInAction(() => store.todos[0].finished = true); // 严格模式 actoin(fn)()
+runInAction(() => store.todos[0].finished = true); // 严格模式 actoin(fn)()
 
 
 // playing around in the console
