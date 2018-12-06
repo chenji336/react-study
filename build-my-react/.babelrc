@@ -1,0 +1,8 @@
+{
+    "presets": ["env"],
+    "plugins": [
+        ["transform-react-jsx", {
+            "pragma": "React.createElement" // 很多人 用 h 替换 React.createElement 
+        }]
+    ]
+}
