@@ -2,7 +2,7 @@
     "presets": ["env"],
     "plugins": [
         ["transform-react-jsx", {
-            "pragma": "React.createElement" // 很多人 用 h 替换 React.createElement 
+            "pragma": "React.createElement" // 很多人 用 h 替换 React.createElement （使用这个语法把jsx=>js)
         }]
     ]
 }
