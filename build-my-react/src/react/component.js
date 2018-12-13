@@ -1,4 +1,4 @@
-import { renderComponent } from '../react-dom/diff';
+import { enqueueSetState } from './set-state-queue.js';
 export default class Component {
     // 基础类不给出render方法，考虑到pure component情况（class会自己携带）
     constructor(props = {}) {
@@ -8,7 +8,6 @@ export default class Component {
     }
 
     setState(stateChange) {
-        Object.assign(this.state, stateChange);
-        renderComponent(this);
+        enqueueSetState(stateChange, this);
     }
 }

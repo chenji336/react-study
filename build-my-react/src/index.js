@@ -44,6 +44,35 @@ class Counter extends React.Component {
         console.log('componentWillMount');
     }
 
+    componentDidMount() {
+        /***测试state的异步执行*/
+        const that = this; // this在function中上下文不是Component
+        // 短时间内多次执行setState
+        function fn1() {
+            for (let i = 0; i < 3; i++) {
+                that.setState({
+                    num: this.state.num + 1
+                });
+                console.log(this.state.num);
+            }
+        }
+        // fn1()
+
+        // setState的函数执行
+        function fn2() {
+            for (let i = 0; i < 3; i++) {
+                // 循环全部执行完之后才会执行setState中的回掉函数
+                that.setState(prevState => {
+                    console.log(prevState.num);
+                    return {
+                        num: prevState.num + 1
+                    }
+                });
+            }
+        }
+        fn2();
+    }
+
     onClick() {
         this.setState({
             num: this.state.num + 1
