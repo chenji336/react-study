@@ -1,4 +1,4 @@
-import { renderComponent } from '../react-dom/render';
+import { renderComponent } from '../react-dom/diff';
 export default class Component {
     // 基础类不给出render方法，考虑到pure component情况（class会自己携带）
     constructor(props = {}) {

@@ -1,6 +1,5 @@
-import { render, renderComponent } from './render.js';
+import render from './render.js';
 
 export default {
-    render,
-    renderComponent
+    render
 };
