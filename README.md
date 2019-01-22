@@ -33,3 +33,16 @@ why?
 两种方式：
 + 短时间内合并setState
 + setState内部有回掉函数，每次都返回前面state的数据
+
+## 一些react实践
+关于alias的定向问题：command+鼠标左箭没有反应，需要配置jsconfig.json。[配置项](https://gist.github.com/NeonXP/65c0f6a3b9e0a0ed2e522188f7ccd00b)
+react-pxq： [一个react+redux的实践](https://github.com/bailicangdu/react-pxq)
+
+## reac+typescript从0-1
+react-typescript-samples是github上一步一步教你使用的教程
+[地址](https://github.com/Lemoncode/react-typescript-samples)
+遇到的一些问题：
++ 使用require： 提示不能使用，因为找不到require，[解决方法](https://stackoverflow.com/questions/12742082/nodejs-require-inside-typescript-file)：
+    - 多处应用的话：npm install --save-dev @types/node；
+    - 少处应用的话：declare function require(name:string);
+

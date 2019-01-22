@@ -1,6 +1,14 @@
 import { delay } from 'redux-saga';
 import { call, put, takeEvery, all, take, fork } from 'redux-saga/effects';
 
+/**
+ * 总结：（理解不一定正确，后续可能会更改）
+ * call： 调用函数，但是函数必须是generator(*)
+ *  fork：跟call一样可以调用函数，不一样的是不会阻塞
+ * put: 当作dispatch使用
+ * take： 调用异步时候使用
+ */
+
 export function* helloSaga() {
     console.log('hello saga');
 }

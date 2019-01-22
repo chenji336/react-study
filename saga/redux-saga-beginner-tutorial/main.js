@@ -12,7 +12,7 @@ import rootSaga from './sagas';
 const sagaMiddleware = createSagaMiddleware();
 // const store = createStore(reducer, applyMiddleware(createSagaMiddleware(helloSaga)))
 const store = createStore(reducer, applyMiddleware(sagaMiddleware));
- sagaMiddleware.run(rootSaga);
+sagaMiddleware.run(rootSaga); // 当作有一个server在跑
 
 const action = type => store.dispatch({type})
 

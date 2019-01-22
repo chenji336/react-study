@@ -26,11 +26,10 @@ function testNest(val = 0, action) {
 let store = createStore(counter);
 
 // 可以手动订阅更新，也可以事件绑定到视图层。
+// *必须放在dispatch前面，因为dispatch才会触发subscribe的callback
 store.subscribe(() => {
   console.log(store.getState());
-}
-
-);
+});
 
 // 改变内部 state 惟一方法是 dispatch 一个 action。
 // action 可以被序列化，用日记记录和储存下来，后期还可以以回放的方式执行
